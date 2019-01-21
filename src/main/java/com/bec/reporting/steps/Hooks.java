@@ -1,31 +1,14 @@
 package com.bec.reporting.steps;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
-
-import com.bec.reporting.tests.TestRunner;
 import com.bec.reporting.utils.Driver;
 import com.bec.reporting.utils.FileRead;
-
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 
 public class Hooks {
-	private static Boolean runOnce = false;
-
-	/*@Before
-	public void beforeAll() throws FileNotFoundException, IOException, InterruptedException {
-		if (!runOnce) {
-			TestRunner.config = FileRead.readProperties();
-		}
-	}
-	
-	@Before
-	public void before(Scenario scenario) {
-		TestRunner.scenario = scenario;
-	}*/
 	
 	@Before
 	public void openBrowser() throws InterruptedException, IOException {

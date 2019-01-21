@@ -8,7 +8,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-
 import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
 import org.openqa.selenium.Dimension;
@@ -39,8 +38,14 @@ public class Driver {
 			System.out.println("Cleaning up the browser");
 			try { 
 				Driver.webdriver.quit();
+				//Runtime.getRuntime().exec("C:\\AutoIt scripts\\closeallbrowsers.exe"); 
+				//OR
+				Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe /T");
 			} catch (NullPointerException e) {
 				System.out.println("Browser already shut down.");
+			}
+			catch(Exception e) {
+				System.out.println(e.getMessage()+"\n Problem Occurs to close browsers");
 			}
 		}
 	}
