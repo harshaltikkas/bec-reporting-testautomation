@@ -8,15 +8,21 @@ import java.util.Properties;
 
 public class FileRead {
 
+	static Properties properties= new Properties();
+	
 	public static FileInputStream readFile(String file) throws FileNotFoundException {
 		return new FileInputStream(new File(file));
 	}
 	
 	public static Properties readProperties() throws FileNotFoundException, IOException {
 		
-		Properties prop = new Properties();
-		prop.load(readFile("src/test/resources/configuration.properties"));
-		return prop;
+		properties.load(readFile("src/test/resources/configuration.properties"));
+		return properties;
 	}
 	
+	public static String getReportConfigPath(){
+		String reportConfigPath = properties.getProperty("reportConfigPath");
+		if(reportConfigPath!= null) return reportConfigPath;
+		else throw new RuntimeException("Report Config Path not specified in the Configuration.properties file for the Key:reportConfigPath");		
+	}
 }

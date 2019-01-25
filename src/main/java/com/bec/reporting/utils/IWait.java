@@ -13,30 +13,19 @@ public class IWait {
 	public static boolean implicit_wait(long time) {
 		try {
 			Driver.webdriver.manage().timeouts().implicitlyWait(time, TimeUnit.SECONDS);
-			/*
-			 * System.out.println("Waited for" + time + "seconds Implicity.");
-			 * 
-			 */
-
 		} catch (Exception e) {
 			return false;
-
 		}
 		return true;
-
 	}
 
 	public static boolean explicit_wait(WebDriver driver, WebElement el) {
 		try {
-
-			new WebDriverWait(driver, 10).ignoring(StaleElementReferenceException.class).until(ExpectedConditions.visibilityOf(el));
-
+			new WebDriverWait(driver, 10).ignoring(StaleElementReferenceException.class)
+					.until(ExpectedConditions.visibilityOf(el));
 		} catch (Exception e) {
 			return false;
-
 		}
 		return true;
-
 	}
-
 }

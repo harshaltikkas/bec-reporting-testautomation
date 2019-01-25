@@ -6,8 +6,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.apache.commons.codec.binary.Base64;
+import org.apache.log4j.Logger;
 
 public class CBTConfiguration {
+	 /******** Log Attribute ********/
+    private static Logger log = Logger.getLogger(CBTConfiguration.class);
 	public static String score = null;
 	public static String sessionId=null;
 	private String username,authkey;
@@ -63,7 +66,7 @@ public class CBTConfiguration {
             osw.close();
             conn.getResponseMessage();
         } catch (Exception e) {
-        	System.out.println(e.getMessage());
+        	log.error(e.getMessage());
         }
 	}
 	
@@ -72,7 +75,7 @@ public class CBTConfiguration {
 		try {
 			hubUrl = new URL("http://" + username + ":" + authkey + "@hub.crossbrowsertesting.com:80/wd/hub");
 		} catch (MalformedURLException e) {
-			System.out.println("Invalid HUB URL");
+			log.error("Invalid HUB URL");
 		}
 		return hubUrl;
 	}
