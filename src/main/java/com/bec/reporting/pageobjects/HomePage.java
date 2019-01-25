@@ -75,6 +75,15 @@ public class HomePage {
 	
 	@FindBy(xpath="//span[@class='scroll-right scroll-active float-right']/i")
 	public WebElement rightarrowofpaginationontesttab;
+	
+	@FindBy(xpath="//div[@class='menu-title' and contains(text(),'School')]/following-sibling::div//div[@class='menu-dropdown-list-inr']/ul//li")
+	public List<WebElement> schoollist;
+	
+	@FindBy(xpath="//div[@class='menu-title' and contains(text(),'Class')]/following-sibling::div//div[@class='menu-dropdown-list-inr']/ul//li")
+	public List<WebElement> classlist;
+	
+	@FindBy(xpath="//div[@class='menu-title' and contains(text(),'Student')]/following-sibling::div//div[@class='menu-dropdown-list-inr']/ul//li")
+	public List<WebElement> studentlist;
 
 	/*Context Header Elements*/
 	@FindBy(xpath="//div[@class='context-header-main']//span[contains(text(),'School:')]/following-sibling::span")
