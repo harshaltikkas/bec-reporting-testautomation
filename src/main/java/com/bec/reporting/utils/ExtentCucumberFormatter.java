@@ -13,7 +13,6 @@ import gherkin.formatter.Reporter;
 import gherkin.formatter.model.*;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -55,7 +54,7 @@ public class ExtentCucumberFormatter implements Reporter, Formatter {
         }
         File newFile=null;
 		if (System.getProperty("browser") == null) {
-			FileReader reader = new FileReader("src//test//resources//configuration.properties");
+			FileReader reader = new FileReader("src//main//resources//configuration.properties");
 			Properties p = new Properties();
 			p.load(reader);
 	        newFile=new File(file.getAbsolutePath().replace("report.html", "report_"+p.getProperty("default_browser_Name")+".html"));

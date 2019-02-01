@@ -16,7 +16,7 @@ public class FileRead {
 	
 	public static Properties readProperties() throws FileNotFoundException, IOException {
 		
-		properties.load(readFile("src/test/resources/configuration.properties"));
+		properties.load(readFile("src/main/resources/configuration.properties"));
 		return properties;
 	}
 	
