@@ -5,7 +5,7 @@ clean_it:
 	mvn clean
 
 test_parallel:
-	make -j 2 test_firefox test_ie test_safari test_chrome test_me
+	make -j 2 test_safari test_chrome test_firefox test_ie test_me
 
 
 test_firefox:

@@ -1,23 +1,10 @@
 # Bec-Reporting-TestAutomation
 Project to automate the UI testcases of BEC-Universe-Reporting 
 
-
-# Selenium-Cucumber
-
 <img src="https://bec-reporting.cf/img/benchmark_logo_2.e0a765418e2a8f64b17c0d3f7c35ded8.png" />
 _______________________________________
 
-## 1. Latest changes:
-
-- Selenium Webdriver Version: __3.4.0__ ( version of Selenium!).
-- Firefox Version:  58.0.2 -> You need to update into this version!
-- Gekodriver Version: 0.19.1 (included on this project!)
-- ChromeDriver updated into version 2.35 (included on this project!)
-- InternetExplorerDriver updated into version 3.9.0 (included on this project!)
-- Added guava 24.0-jre into the POM
-- Updated several libraries on the POM.
-
-## 2. Download the project.
+## 1. Download the project.
 
 In order to start using the project you need to create your own Fork on Github and then clone the project:
 
@@ -25,15 +12,19 @@ In order to start using the project you need to create your own Fork on Github a
 git clone https://github.com/harshaltikkas/bec-reporting-testautomation.git
 ```
 
-## 3. Choose your OS, Browser and Log Level on the POM.
+## 2.Setup
+* Check configuration.properties for browsers and their os and versions to be included for the test 
+* Set environment variables with your [CrossBrowser Username and Access Key] in configuration.properties
 
-On the properties file you can choose between:
-- Several OS: Windows, Mac, Linux.
-- Several Browsers: Chrome, Firefox, IE.
+## 3.Running your tests
+* To run a single test, run `mvn install -Dbrowser=<BROWSER>`
+* To run particular test in multiple in parallel browsers, run `make -j 2 test_firefox test_ie .... n`
+* To run parallel all tests, run `make run_all_in_parallel`
 
 
-## 4. Run Feature File(s).
-
-For Now,
-Execute TestRunner.java to run features file.
-Note:Please keep @Feature Tag in each feature file.
+## Notes
+* You need to provide webdrivers of individual browser on whome you want to execute test cases depend upon different OS.
+* You need to configure "Make" i.e. "make-3.81-bin" on your machine.
+* Need to set classpath for maven,make till bin(folder).
+* `make -j 2 test_firefox test_ie .... n` , make -j 2 saying two instances of browser will launch (firefox & ie).
+* You can view your test results on the [CrossBrowser Automate dashboard](https://app.crossbrowsertesting.com/selenium?tab=recent)

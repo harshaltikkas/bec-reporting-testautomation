@@ -15,7 +15,6 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -27,12 +26,9 @@ import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
-
 import com.bec.reporting.steps.Hooks;
 import com.bec.reporting.tests.TestRunner;
 
-//import lombok.extern.slf4j.Slf4j;
-//@Slf4j
 public class Driver {
 	 /******** Log Attribute ********/
     private static Logger log = Logger.getLogger(Driver.class);
